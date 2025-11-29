@@ -9,6 +9,8 @@ from github_connector.custom_exceptions import ResourceNotFound
 github_client = client.GitHubClient()
 
 def test_200_ok(mocker):
+    """Tests that function returns normal response"""
+    
     mock_response = mocker.Mock()
     mock_response.json.return_value = {"repo": "playport"}
     
@@ -22,6 +24,8 @@ def test_200_ok(mocker):
     
     
 def test_404_not_found(mocker):
+    """Tests if function raises 404"""
+    
     mock_response = mocker.Mock()
     mock_response.status_code = 404
     mock_response.json.return_value = None
@@ -40,6 +44,7 @@ def test_404_not_found(mocker):
     
     
 def test_make_request_rate_limit_retry(mocker):
+    """Tests retry logic"""
 
     mock_429 = mocker.Mock()
     mock_429.status_code = 429
