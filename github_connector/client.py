@@ -101,6 +101,8 @@ class GitHubClient:
 
                     
     def get_repo(self, owner: str, repo: str) -> dict:
+        """Gets the details of the specified repository"""
+        
         endpoint = f"https://api.github.com/repos/{owner}/{repo}"
         
         result = self._make_request("GET", endpoint)
@@ -121,6 +123,8 @@ class GitHubClient:
         
         
     def get_latest_release(self, owner: str, repo: str) -> dict:
+        """Gets the latest release of specifies repository"""
+        
         endpoint = f"https://api.github.com/repos/{owner}/{repo}/releases/latest"
         
         result = self._make_request("GET", endpoint)
