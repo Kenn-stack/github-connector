@@ -11,7 +11,6 @@ class MaxRetriesExceeded(GitHubAPIError):
     """Raised after max retries is reached."""
     pass
     
-
 class JSONParseError(Exception):
     """Raised when JSON decoding fails."""
     pass

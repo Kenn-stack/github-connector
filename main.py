@@ -4,14 +4,12 @@ from configs.logging import setup_logging
 setup_logging()
 
 def main():
-    
-    get_repo = GitHubClient().get_repo("Kenn-stack", "PlayBoy")
-    
-    # get_repo = GitHubClient().get_repo("Kenn-stack", "PlayPort")
+        
+    get_repo = GitHubClient().get_repo("Kenn-stack", "PlayPort")
 
-    # get_latest = GitHubClient().get_latest_release("Kenn-stack", "PlayPort")
+    get_latest = GitHubClient().get_latest_release("Kenn-stack", "PlayPort")
     
-    return {"Repo": get_repo}
+    return {"Repo": get_repo, "Latest": get_latest}
     
     
     
